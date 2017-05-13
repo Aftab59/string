@@ -2,18 +2,8 @@
 package com.test.capitalfloat;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.HashMap;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.struts2.interceptor.ServletRequestAware;
-import org.apache.struts2.interceptor.ServletResponseAware;
-
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ModelDriven;
-import com.opensymphony.xwork2.util.ValueStack;
 
 public class StringParser extends ApplicationBean implements ModelDriven<StringParserBean>{
 	private StringParserBean parserBean = null;
