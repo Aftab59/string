@@ -15,14 +15,10 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ModelDriven;
 import com.opensymphony.xwork2.util.ValueStack;
 
-public class StringParser implements ModelDriven<StringParserBean>, ServletRequestAware, ServletResponseAware{
+public class StringParser extends ApplicationBean implements ModelDriven<StringParserBean>{
 	private StringParserBean parserBean = null;
-	private ValueStack stack = null;
-    private HashMap<String, Object> context =  null;
-    private String resultString = "";
-    protected HttpServletRequest request;
-	protected HttpServletResponse response;
-	
+	private String resultString = "";
+    
 	public String parseString() throws IOException
 	{
 		getResultString(parserBean.getString(), 0,0, parserBean.getString().length(),"");
@@ -55,16 +51,6 @@ public class StringParser implements ModelDriven<StringParserBean>, ServletReque
 		getResultString(inputString, i+1, j+2, n, tempString);
 		
 	}
-	public void addToValueStack(String key, Object value)
-	{
-		 stack = stack == null ? ActionContext.getContext().getValueStack() : stack;
-        if (context == null)
-        {
-            context = new HashMap<String, Object>();
-            stack.push(context);
-        }
-        context.put(key, value);
-	}
 	
 	@Override
 	public StringParserBean getModel() {
@@ -73,15 +59,5 @@ public class StringParser implements ModelDriven<StringParserBean>, ServletReque
 			parserBean = new StringParserBean();
         }
         return parserBean;
-	}
-	@Override
-	public void setServletResponse(HttpServletResponse response) {
-		this.response = response;
-		
-	}
-	@Override
-	public void setServletRequest(HttpServletRequest request) {
-		this.request = request;
-		
 	}
 }
