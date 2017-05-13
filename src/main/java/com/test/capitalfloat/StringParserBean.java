@@ -1,5 +1,5 @@
 //$Id$
-package com.test.capitalflot;
+package com.test.capitalfloat;
 
 public class StringParserBean {
 	private String string;

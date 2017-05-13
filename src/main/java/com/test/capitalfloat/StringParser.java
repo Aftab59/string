@@ -1,5 +1,5 @@
 //$Id$
-package com.test.capitalflot;
+package com.test.capitalfloat;
 
 import java.io.IOException;
 import java.io.PrintWriter;
