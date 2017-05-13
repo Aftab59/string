@@ -4,7 +4,7 @@
 	<constant name="struts.devMode" value="true" />
 	<package name="stringparser" extends="struts-default">
 
-		<action name="combinations" class="com.test.capitalflot.StringParser"
+		<action name="combinations" class="com.test.capitalfloat.StringParser"
 			method="parseString">
 			<result name="success">/parserView.jsp</result>
 		</action>
